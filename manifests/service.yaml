@@ -1,12 +1,13 @@
+# exposing the deployment
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
-  namespace: nginx-demo
+  name: custom-app-service
 spec:
   selector:
-    app: nginx
+    custom: app
   ports:
-  - port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80
   type: ClusterIP
